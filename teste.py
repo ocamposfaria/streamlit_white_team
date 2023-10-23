@@ -47,7 +47,7 @@ with st.sidebar:
 
     st.markdown(
         "### Como usar?\n"
-        f'Selecione seu nome e os dias que você irá ao CCS, e clique em "submeter". Sempre estarão disponíveis para a seleção os próximos {column_qty_shown} dias, a não ser que a capacidade do dia tenha sido atingida.'
+        f'Selecione seu nome e os dias que você irá ao CCS, e clique em "Submeter presença". Sempre estarão disponíveis para a seleção os próximos {column_qty_shown} dias, a não ser que a capacidade do dia tenha sido atingida. Se adicionar algo sem querer, é só limpar tudo para o seu usuário (cuidado para não limpar do coleguinha rsrs).'
     )
 
     nome = st.selectbox(
