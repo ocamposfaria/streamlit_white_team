@@ -37,6 +37,19 @@ st.set_page_config(layout="wide")
 
 # left 
 with st.sidebar:
+
+    st.markdown(
+        "### Sobre\n"
+        "Já sabemos que a Defesa Cibernética cresceu e não dá pra todo mundo ir presencial ao mesmo tempo, né? Então vamos usar esse controle aqui pra ninguém chegar no escritório e acabar ficando sem baia! :)\n"
+    )
+    
+    st.markdown("---")
+
+    st.markdown(
+        "### Como usar?\n"
+        f'Selecione seu nome e os dias que você irá ao CCS, e clique em "submeter". Sempre estarão disponíveis para a seleção os próximos {column_qty_shown} dias, a não ser que a capacidade do dia tenha sido atingida.'
+    )
+
     nome = st.selectbox(
         'Selecione seu nome.', (df.index),
         placeholder="Nome",
