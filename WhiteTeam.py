@@ -9,12 +9,16 @@ column_qty_shown = 14
 
 max_capacity = 6
 
+data_location = 'data/data.csv'
+
+clean_data_location = 'data/clean.csv'
+
 # # # # # # # # # # # DADOS # # # # # # # # # # # 
 
 if reset:
-    df = pd.read_csv('clean.csv', index_col='Nome', dtype=str).sort_index()
+    df = pd.read_csv(clean_data_location, index_col='Nome', dtype=str).sort_index()
 else:
-    df = pd.read_csv('data.csv', index_col='Nome', dtype=str).sort_index()
+    df = pd.read_csv(data_location, index_col='Nome', dtype=str).sort_index()
 
 # os seguintes dias estarão no multiselect e no preview:
 
@@ -75,14 +79,14 @@ with st.sidebar:
             if df[i].count() == max_capacity:
                 df[i] = df[i].fillna('❌')
 
-            df.to_csv(f'data.csv')
+            df.to_csv(data_location)
     
     if botao_limpar and nome is not None and dias_selecionados is not None:
         for i in dias:
             df.loc[nome, i] = None
             if df[i].count() != max_capacity:
                 df[i] = df[i].replace('❌', None)
-            df.to_csv(f'data.csv')
+            df.to_csv(data_location)
         st.write('Tudo limpo!')
 
 # right
